@@ -1,0 +1,66 @@
+
+
+<div class="image-background"></div>
+
+<body>
+
+    <div class="image-background"></div>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Bem-vindo</h1>
+            <p>Registre-se para continuar</p>
+            <div class="logo-container">
+
+              <img src="logo.jpg">
+            </div>
+
+            <br>
+            <br>
+            <div class="social-login">
+              <a>
+                <button mat-raised-button color="accent">
+                  <img src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202090codedownloadgithublogosvg-115677_115633.png" alt="GitHub">
+                  Login com Github
+                </button>
+              </a>
+              <a>
+                <button mat-raised-button color="warn">
+                  <img src="https://image.flaticon.com/icons/png/512/281/281764.png" alt="Google">
+                  Login com Google
+                </button>
+              </a>
+            </div>
+          </div>
+          
+      <div class="right-panel">
+        <br>
+        <form (ngSubmit)="register()" class="register-form">
+          <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="user.nome" name="nome" required>
+          </mat-form-field>
+        
+          <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="user.email" name="email" required>
+          </mat-form-field>
+        
+
+          <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="user.password" name="password" type="password" required>
+          </mat-form-field>
+        
+
+          <mat-form-field>
+            <input matInput placeholder="CPF/CNPJ" [(ngModel)]="user.cpfCnpj" name="cpfCnpj" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Telefone" [(ngModel)]="user.phone" name="phone">
+          </mat-form-field>
+        
+          <button mat-raised-button color="primary">Registrar</button>
+        </form>
+  
+      </div>
+    </div>
+
+    </body>

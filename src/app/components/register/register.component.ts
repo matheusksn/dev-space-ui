@@ -12,16 +12,22 @@ export class RegisterComponent implements OnInit {
   user: User = {
     nome: '',
     email: '',
+    username: '',
     password: '',
     cpfCnpj: '',
     phone: '',
   };
+  showPassword = false; 
 
   ngOnInit() {
     console.log("vasco")
   }
 
   constructor(private userService: UserService) { }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 
   register() {
     this.userService.register(this.user).subscribe(
@@ -33,5 +39,6 @@ export class RegisterComponent implements OnInit {
       }
     );
   }
+
 }
 

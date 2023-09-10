@@ -1,2 +1,46 @@
-
 <router-outlet></router-outlet>
+
+<app-star-background>
+    <mat-toolbar color="primary">
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item [routerLink]="['/rota1']">Reservar</button>
+            <button mat-menu-item [routerLink]="['/rota2']">Pomodoro</button>
+        </mat-menu>
+
+        <span class="spacer"></span>
+
+        <ng-container *ngIf="!isUserLoggedIn; else userInfo">
+            <button mat-button (click)="openLoginDialog()">Login</button>
+        </ng-container>
+        <ng-template #userInfo>
+            <span>Bem-vindo, {{ userName }}</span>
+            <button mat-button (click)="logout()">Logout</button>
+        </ng-template>
+    </mat-toolbar>
+    <div class="center-content">
+        <img src="assets/logo.jpg" alt="Astronauta" class="logo">
+        <div class="text-container">
+            <h3 class="brand">DevSpace</h3>
+            <br>   
+            <p class="description">
+                Explore o espaço infinito do desenvolvimento de software com o Dev Space.
+<br>    <br>
+                Nossa plataforma oferece laboratórios equipados com as melhores
+                ferramentas de desenvolvimento. 
+                <br>    <br>
+                Liberte sua criatividade, colabore com outros
+                astronautas digitais e leve seus projetos às estrelas.
+                <br>   
+            </p>
+      
+        </div>
+        <br>
+        <br>
+        <div class="button-container">
+            <button mat-raised-button color="primary" [routerLink]="['/register']">Cadastre-se</button>
+        </div>
+    </div>
+</app-star-background>

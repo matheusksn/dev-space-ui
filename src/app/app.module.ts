@@ -4,6 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule, Routes } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,13 +17,16 @@ import { LoginComponent } from './components/login/login.component';
 import { CompleteProfileComponent } from './components/complete-profile/complete-profile.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { StarBackgroundComponent } from './components/star-background/star-background.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    CompleteProfileComponent
+    CompleteProfileComponent,
+    StarBackgroundComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    MatIconModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

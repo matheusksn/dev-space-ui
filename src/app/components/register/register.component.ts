@@ -21,11 +21,10 @@ export class RegisterComponent implements OnInit {
   showPassword = false; 
 
   ngOnInit() {
-    console.log("vasco")
   }
 
   constructor(private userService: UserService,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar ) { }
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;

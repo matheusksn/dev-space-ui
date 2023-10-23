@@ -1,0 +1,61 @@
+<app-star-background>
+ <br>
+    <div class="lab-filter">
+      <mat-form-field class="filter-field">
+        <mat-label>Filtrar por Nome</mat-label>
+        <input matInput [(ngModel)]="nameFilter" placeholder="Nome">
+      </mat-form-field>
+  
+      <mat-form-field class="filter-field">
+        <mat-label>Filtrar por Descrição</mat-label>
+        <input matInput [(ngModel)]="descriptionFilter" placeholder="Descrição">
+      </mat-form-field>
+  
+      <mat-form-field class="filter-field">
+        <mat-label>Filtrar por Status</mat-label>
+        <mat-select [(ngModel)]="statusFilter">
+          <mat-option value="all">Todos</mat-option>
+          <mat-option value="true">Ativo</mat-option>
+          <mat-option value="false">Inativo</mat-option>
+        </mat-select>   
+      </mat-form-field>
+  
+      <mat-form-field class="filter-field">
+        <mat-label>Filtrar por Andar</mat-label>
+        <input matInput type="number" [(ngModel)]="floorFilter" placeholder="Andar">
+      </mat-form-field>
+    </div>
+  
+    <div class="lab-cards" style="width: 95%; align-content: center; color: white;">
+        <div class="lab-card" *ngFor="let lab of filteredLabs">
+          <mat-card class="custom-card">
+            <mat-card-header>
+              <mat-card-title>{{ lab.name }}</mat-card-title>
+              <mat-card-subtitle>{{ lab.description }}</mat-card-subtitle>
+            </mat-card-header>
+    
+            <mat-card-content class="custom-card-content">
+              <div class="lab-info">
+                <span>ID:</span>
+                {{ lab.id }}
+              </div>
+              <div class="lab-info">
+                <span>Status:</span>
+                {{ lab.isActive ? 'Ativo' : 'Inativo' }}
+              </div>
+              <div class="lab-info">
+                <span>Andar:</span>
+                {{ lab.floor }}
+              </div>
+            </mat-card-content>
+    
+            <mat-card-actions class="custom-card-actions">
+              <button mat-raised-button color="primary" class="custom-button" (click)="visualizarLab(lab.id)">Visualizar</button>
+              <button mat-raised-button color="accent" class="custom-button" (click)="editarLab(lab.id)">Editar</button>
+              <button mat-raised-button color="warn" class="custom-button" (click)="excluirLab(lab.id)">Excluir</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+  </app-star-background>
+  

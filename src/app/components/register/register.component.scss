@@ -69,3 +69,12 @@ body {
     background-color: none;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
+.success-snackbar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.error-snackbar {
+  background-color: #f44336;
+  color: white;
+}

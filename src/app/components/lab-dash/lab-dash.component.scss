@@ -1,0 +1,37 @@
+.lab-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-field {
+    flex: 1;
+    margin-right: 20px;
+  }
+  .lab-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .lab-card {
+    flex-basis: calc(25% - 20px); 
+    box-sizing: border-box; 
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .lab-info {
+    font-size: 16px;
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+  
+  .custom-button {
+    width: 120px; 
+    margin: 10px;
+  }

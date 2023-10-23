@@ -1,5 +1,5 @@
-// login.component.ts
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,20 +9,21 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent {
   credentials = {
-    email: '',
+    login: '',
     password: ''
   };
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private router: Router) { }
 
- login() { }
-    /* this.userService.login(this.credentials).subscribe(
-      data => {
-        console.log('Login bem-sucedido:', data);
+  login() {
+    this.userService.login(this.credentials).subscribe(
+      (response) => {
+        this.router.navigate(['/home']); 
       },
-      error => {
-        console.log('Erro:', error);
+      (error) => {
       }
     );
-  } */
+  }
+
 }
